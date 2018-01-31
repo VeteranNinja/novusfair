@@ -40,9 +40,9 @@
 
             <h3> Interest</h3>
             <h:inputText value = "#{bean.interest}">  </h:inputText>
-<!--
+
             <h3> Availability for the assessment day </h3>
-            <h:inputText value = "#{bean.availability}">  </h:inputText> 
+            <h:inputText value = "#{bean.availability}">  </h:inputText>
 
 
             <h3> Stream </h3>
@@ -58,19 +58,16 @@
                 <f:selectItem itemValue="manchester" itemLabel="Manchester" />
                 <f:selectItem itemValue="london" itemLabel="London" />
                 <f:selectItem itemValue="sheffield" itemLabel="Sheffield"/>
-            </h:selectOneMenu> -->
+            </h:selectOneMenu>
             
-           <br /><br /> 
+      <br /><br /> 
               
+           <h:commandButton value="Submit Form" action= "#{bean.submit}"/>
 
 
         </h:form>
-          
-           <h2>Enter admin password</h2>
-         <h:inputText value = "#{bean.password}" />
-         <h:commandButton value="submit" type="submit" action="#{bean.adminLogin}" />   
-          
-          
+
+
           
           
           
