@@ -24,6 +24,7 @@ public class Person {
     String selectedLocation;
     int assessmentYear;
     String test;
+    String test2;
     public Person(String firstName, String surname, String homeAddress, int contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
     this.id=1;
      this.firstName=firstName;
