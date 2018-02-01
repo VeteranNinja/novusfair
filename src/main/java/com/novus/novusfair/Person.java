@@ -1,5 +1,10 @@
 package com.novus.novusfair;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +15,8 @@ package com.novus.novusfair;
  *
  * @author Marek
  */
+@Entity
+@Table(name="People")
 public class Person {
 
     public int getId() {
@@ -124,37 +131,38 @@ public class Person {
         this.assessmentYear = assessmentYear;
     }
 
-    public String getTest() {
-        return test;
-    }
+  
 
-    public void setTest(String test) {
-        this.test = test;
-    }
-
-    public String getTest2() {
-        return test2;
-    }
-
-    public void setTest2(String test2) {
-        this.test2 = test2;
-    }
+    
+    @Id
     int id;
+    @Column(name="firstName")
     String firstName;
+    @Column(name="surname")
     String surname;
+    @Column(name="homeAddress")
     String homeAddress;
+    @Column(name="contactNumber")
     String contactNumber;
+    @Column(name="email")
     String email;
+    @Column(name="degree")
     String degree;
+    @Column(name="yearIn")
     int yearIn;
+    @Column(name="yearOut")
     int yearOut;
+    @Column(name="interest")
     String interest;
+    @Column(name="availability")
     String availability;
+    @Column(name="selectedStream")
     String selectedStream;
+    @Column(name="selectedLocation")
     String selectedLocation;
+    @Column(name="assessmentYear")
     int assessmentYear;
-    String test;
-    String test2;
+   
     public Person(){
         
     }
