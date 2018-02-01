@@ -130,7 +130,9 @@ public class Bean implements Serializable  {
 
  }
  
-
+    public void deletePerson(int personId) {
+        logic.deletePerson(personId);
+    }
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
     }
@@ -190,7 +192,7 @@ public class Bean implements Serializable  {
  
  private String password;
  
- private static String ADMIN_PASSWORD = "rob";
+ private static final String ADMIN_PASSWORD = "rob";
  
  public void adminLogin() throws IOException {
     if(password.equals(ADMIN_PASSWORD))
