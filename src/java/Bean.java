@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.io.Serializable;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -179,10 +181,10 @@ public class Bean implements Serializable  {
 
  }
  
- public String adminLogin() {
+ public void adminLogin() throws IOException {
     if(password.equals(ADMIN_PASSWORD))
-        return "admin_page";
+        FacesContext.getCurrentInstance().getExternalContext().dispatch("/admin_page.xhtml");
     else 
-        return "login_failed";
+        FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
 }
 }
