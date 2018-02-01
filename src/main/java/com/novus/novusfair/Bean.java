@@ -8,9 +8,6 @@ package com.novus.novusfair;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import static java.util.Collections.singletonList;
 import java.util.List;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -109,7 +106,7 @@ public class Bean implements Serializable  {
         return assesmentYear;
     }
 
-    private LogicLayer logic;
+    private LogicLayer logic = new LogicLayer();
     public void setAssesmentYear(int assesmentYear) {
         this.assesmentYear = assesmentYear;
     }
