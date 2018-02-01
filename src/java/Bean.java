@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -123,6 +125,13 @@ public class Bean implements Serializable  {
 // private Place selectedLocation;
  private int assesmentYear;
  private String classification;
+ 
+ private List<Person> people;
+
+    public List<Person> getPeople() {
+        //return logic.getPeople();
+        return new ArrayList();
+    }
 
     public String getClassification() {
         return classification;
@@ -176,8 +185,7 @@ public class Bean implements Serializable  {
  }*/
  
  public void handleSubmit() {
-
-   // logic.createPerson();
+   //logic.createPerson();
 
  }
  
