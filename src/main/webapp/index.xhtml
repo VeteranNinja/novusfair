@@ -70,7 +70,7 @@
 
         <h:form>
         <h2>Enter admin password</h2>
-         <h:inputText value = "#{bean.password}" />
+         <h:inputSecret value = "#{bean.password}"/>
          <h:commandButton value="submit" type="submit" action="#{bean.adminLogin}" />   
          </h:form>
     </h:body>

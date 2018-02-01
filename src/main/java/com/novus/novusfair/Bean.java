@@ -8,6 +8,7 @@ package com.novus.novusfair;
 
 import java.io.IOException;
 import java.io.Serializable;
+import static java.util.Collections.singletonList;
 import java.util.List;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -165,8 +166,8 @@ public class Bean implements Serializable  {
  private List<Person> people;
 
     public List<Person> getPeople() {
-        return logic.getPeople();
-        //return singletonList(testPerson);
+        //return logic.getPeople();
+        return singletonList(testPerson);
     }
 
     public String getClassification() {
@@ -197,6 +198,6 @@ public class Bean implements Serializable  {
     else 
         FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
 }
- /*private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , 03, "ffs@2.com", 
-         "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);*/
+ private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , "4", "ffs@2.com", 
+         "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);
 }

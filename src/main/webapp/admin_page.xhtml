@@ -69,5 +69,7 @@ and open the template in the editor.
               <f:facet name="header">Assesment Year</f:facet>
               #{person.assessmentYear}
             </h:column>
+            
+            <h:column><h:commandButton value="Delete" type="submit" action="#{bean.deletePerson(person.id)}" /></h:column>
     </h:dataTable>
 </html>
