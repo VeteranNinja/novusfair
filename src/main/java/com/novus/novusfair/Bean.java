@@ -200,6 +200,6 @@ public class Bean implements Serializable  {
     else 
         FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
 }
- private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , "4", "ffs@2.com", 
+ private static final Person testPerson = new Person("Joe", "Bloggs", "nowhere" , "4", "ffs@2.com", 
          "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);
 }
