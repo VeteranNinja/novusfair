@@ -46,11 +46,11 @@ public class Bean implements Serializable  {
         this.homeAddress = homeAddress;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 
@@ -114,7 +114,7 @@ public class Bean implements Serializable  {
  private String firstName;
  private String lastName;
  private String homeAddress;
- private int contactNumber;
+ private String contactNumber;
  private String email;
  private String degree;
  

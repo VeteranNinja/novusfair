@@ -18,13 +18,13 @@ public class LogicLayer {
     
     public static void main(String [] args)
     {
-        Person person = new Person();
+        Person person = new Person("John", "Snow", "9 Walker Road", "00000009001", "superjohnsnow@gmail.com", "Computer Science", 2012, 2015, "Making potato salads", "2018-02-22", "SoftwareDevelopment", "Manchester", 2018);
         Configuration con = new Configuration();
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         session.save(person);
     }
-    public void addPerson(String firstName, String surname, String homeAddress, int contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
+    public void addPerson(String firstName, String surname, String homeAddress, String contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
         
     }
     public void deletePerson(int id){
