@@ -49,11 +49,11 @@ public class Bean implements Serializable  {
         this.homeAddress = homeAddress;
     }
 
-    public String getContactNumber() {
+    public int getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(String contactNumber) {
+    public void setContactNumber(int contactNumber) {
         this.contactNumber = contactNumber;
     }
 
@@ -109,7 +109,7 @@ public class Bean implements Serializable  {
         return assesmentYear;
     }
 
-    //private LogicLayer lg;
+    private LogicLayer logic;
     public void setAssesmentYear(int assesmentYear) {
         this.assesmentYear = assesmentYear;
     }
@@ -117,7 +117,7 @@ public class Bean implements Serializable  {
  private String firstName;
  private String lastName;
  private String homeAddress;
- private String contactNumber;
+ private int contactNumber;
  private String email;
  private String degree;
  
@@ -125,6 +125,13 @@ public class Bean implements Serializable  {
  private int yearOut;
  private String interest;
  private String availablity;
+  
+ public void submit() {
+     logic.addPerson(firstName, lastName, homeAddress, contactNumber, email, degree, yearIn, 
+             yearOut, interest, availablity, stream, location, assesmentYear);
+
+ }
+ 
 
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
@@ -161,8 +168,8 @@ public class Bean implements Serializable  {
  private List<Person> people;
 
     public List<Person> getPeople() {
-        //return logic.getPeople();
-        return singletonList(testPerson);
+        return logic.getPeople();
+        //return singletonList(testPerson);
     }
 
     public String getClassification() {
@@ -187,46 +194,12 @@ public class Bean implements Serializable  {
  
  private static String ADMIN_PASSWORD = "rob";
  
- /*
- static boolean isAlpha(String str) {
-     return str.matches("[a-zA-Z]+");
- }
- 
- static boolean isNum(String str) {
-     return str.matches("[0-9]+");
- }
-
- public boolean dataValid() {
-     boolean ret = true;
-     
-     if (name.length() == 0 || !isAlpha(name))
-         ret = false;
-     if (!isNum(contactNumber))
-         ret = false;
-     if (!isAlpha(degree))
-         ret = false;
-     
-    if (yearIn > 3000 || yearIn < 2000)
-         ret = false;
-    if (yearOut > 3000 || yearOut < 2000)
-        ret = false;
-    if (assesmentYear > 3000 || assesmentYear < 2000)
-         ret = false;
-
-   return ret; 
- }*/
- 
- public void submit() {
-   //logic.createPerson();
-
- }
- 
  public void adminLogin() throws IOException {
     if(password.equals(ADMIN_PASSWORD))
         FacesContext.getCurrentInstance().getExternalContext().dispatch("/admin_page.xhtml");
     else 
         FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
 }
- private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , 03, "ffs@2.com", 
-         "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);
+ /*private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , 03, "ffs@2.com", 
+         "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);*/
 }
