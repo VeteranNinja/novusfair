@@ -44,11 +44,11 @@ public class Person {
         this.homeAddress = homeAddress;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 
@@ -143,7 +143,7 @@ public class Person {
     String firstName;
     String surname;
     String homeAddress;
-    int contactNumber;
+    String contactNumber;
     String email;
     String degree;
     int yearIn;
@@ -158,7 +158,7 @@ public class Person {
     public Person(){
         
     }
-    public Person(String firstName, String surname, String homeAddress, int contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
+    public Person(String firstName, String surname, String homeAddress, String contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
         this.id=1;
         this.firstName=firstName;
         this.surname=surname;
