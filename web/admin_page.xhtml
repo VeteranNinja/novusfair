@@ -15,7 +15,7 @@ and open the template in the editor.
                     <f:facet name="header">People</f:facet>
             <h:column>
               <f:facet name="header">ID</f:facet>
-              #{person.ID}
+              #{person.id}
             </h:column>            
             <h:column>
               <f:facet name="header">First Name</f:facet>
@@ -51,7 +51,7 @@ and open the template in the editor.
             </h:column>
             <h:column>
               <f:facet name="header">Interests</f:facet>
-              #{person.interests}
+              #{person.interest}
             </h:column>
             <h:column>
               <f:facet name="header">Assesment Date</f:facet>
@@ -59,15 +59,15 @@ and open the template in the editor.
             </h:column>
             <h:column>
               <f:facet name="header">Stream</f:facet>
-              #{person.stream}
+              #{person.selectedStream}
             </h:column>            #
             <h:column>
               <f:facet name="header">Location of Test Centre</f:facet>
-              #{person.testLocation}
+              #{person.selectedLocation}
             </h:column>           
             <h:column>
               <f:facet name="header">Assesment Year</f:facet>
-              #{person.assesmentYear}
+              #{person.assessmentYear}
             </h:column>
     </h:dataTable>
 </html>
