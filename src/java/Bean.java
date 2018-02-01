@@ -7,6 +7,8 @@
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import static java.util.Collections.singletonList;
 import java.util.List;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -93,12 +95,12 @@ public class Bean implements Serializable  {
         this.interest = interest;
     }
 
-    public String getAvailablity() {
-        return Availablity;
+    public String getAvailability() {
+        return availablity;
     }
 
-    public void setAvailablity(String Availablity) {
-        this.Availablity = Availablity;
+    public void setAvailability(String Availablity) {
+        this.availablity = Availablity;
     }
 
     public int getAssesmentYear() {
@@ -120,9 +122,37 @@ public class Bean implements Serializable  {
  private int yearIn;
  private int yearOut;
  private String interest;
- private String Availablity;
- //private Stream selectedStream;
-// private Place selectedLocation;
+ private String availablity;
+
+    public void setAvailablity(String availablity) {
+        this.availablity = availablity;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+ private String stream;
+ private String location;
+
+    public String getAvailablity() {
+        return availablity;
+    }
+
+    public String getStream() {
+        return stream;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setStream(String selectedStream) {
+        this.stream = selectedStream;
+    }
+
+    public void setSelectedLocation(String selectedLocation) {
+        this.location = selectedLocation;
+    }
  private int assesmentYear;
  private String classification;
  
@@ -130,7 +160,7 @@ public class Bean implements Serializable  {
 
     public List<Person> getPeople() {
         //return logic.getPeople();
-        return new ArrayList();
+        return singletonList(testPerson);
     }
 
     public String getClassification() {
@@ -184,7 +214,7 @@ public class Bean implements Serializable  {
    return ret; 
  }*/
  
- public void handleSubmit() {
+ public void submit() {
    //logic.createPerson();
 
  }
@@ -195,4 +225,6 @@ public class Bean implements Serializable  {
     else 
         FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
 }
+ private static Person testPerson = new Person("Joe", "Bloggs", "nowhere" , 03, "ffs@2.com", 
+         "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);
 }
