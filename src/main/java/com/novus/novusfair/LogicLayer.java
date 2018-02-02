@@ -50,6 +50,18 @@ public class LogicLayer {
         
         //Done
     }
+     public static void addPerson(Person person){
+        Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Person.class);
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession();
+        Transaction tx = session.beginTransaction();
+        session.save(person);
+        session.flush();
+        tx.commit();
+        session.close();
+        
+        //Done
+    }
     public static void deletePerson(int id){
         
         Person personToDelete = getPersonById(id);
