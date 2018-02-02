@@ -2,6 +2,8 @@ package com.novus.novusfair;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -135,6 +137,7 @@ public class Person {
 
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     int id;
     @Column(name="firstName")
     String firstName;
@@ -167,7 +170,6 @@ public class Person {
         
     }
     public Person(String firstName, String surname, String homeAddress, String contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
-        this.id=1;
         this.firstName=firstName;
         this.surname=surname;
         this.homeAddress=homeAddress;
@@ -181,6 +183,26 @@ public class Person {
         this.selectedStream=selectedStream;
         this.selectedLocation=selectedLocation;
         this.assessmentYear=assessmentYear;
+    }
+     public Person(int id, String firstName, String surname, String homeAddress, String contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
+        this.id=id;
+        this.firstName=firstName;
+        this.surname=surname;
+        this.homeAddress=homeAddress;
+        this.contactNumber=contactNumber;
+        this.email=email;
+        this.degree=degree;
+        this.yearIn=yearIn;
+        this.yearOut=yearOut;
+        this.interest=interest;
+        this.availability=availability;
+        this.selectedStream=selectedStream;
+        this.selectedLocation=selectedLocation;
+        this.assessmentYear=assessmentYear;
+    }
+     @Override
+    public String toString(){
+      return ("ID: "+id+" Name: "+firstName+" Surname: "+surname);
     }
     
 }
