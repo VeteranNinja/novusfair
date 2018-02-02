@@ -48,7 +48,9 @@ public class LogicLayer {
         session.save(person);
         session.save(person2);
         session.save(person3);
+        session.flush();
         tx.commit();
+        session.close();
     }
     public static void addPerson(String firstName, String surname, String homeAddress, String contactNumber, String email, String degree, int yearIn, int yearOut, String interest, String availability, String selectedStream, String selectedLocation, int assessmentYear){
         Person person = new Person(firstName, surname, homeAddress, contactNumber, email, degree, yearIn, yearOut, interest, availability, selectedStream, selectedLocation, assessmentYear);
@@ -57,6 +59,7 @@ public class LogicLayer {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         session.save(person);
+        
         session.flush();
         tx.commit();
         session.close();
@@ -69,6 +72,7 @@ public class LogicLayer {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         session.save(person);
+        
         session.flush();
         tx.commit();
         session.close();
@@ -84,6 +88,7 @@ public class LogicLayer {
             Session session = sf.openSession();
             Transaction tx = session.beginTransaction();
             session.delete(personToDelete);
+            
             session.flush();
             tx.commit();
             session.close();
@@ -100,6 +105,7 @@ public class LogicLayer {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         session.update(updatedPerson);
+        
         session.flush();
         tx.commit();
         session.close();
@@ -113,6 +119,7 @@ public class LogicLayer {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         session.update(updatedPerson);
+        
         session.flush();
         tx.commit();
         session.close();
@@ -128,8 +135,11 @@ public class LogicLayer {
         Transaction tx = session.beginTransaction();
         person = (Person)session.get(Person.class, id);
         
+        session.flush();
+        tx.commit();
+        session.close();
         
-        
+         System.out.println("About to return: "+ person);
         return person;
         
         //Done
@@ -148,6 +158,10 @@ public class LogicLayer {
         System.out.println("List of people we got: ");
         System.out.println(people);
        
+        session.flush();
+        tx.commit();
+        session.close();
+        
         return people;
         //Done
     }
@@ -164,6 +178,10 @@ public class LogicLayer {
         ArrayList people = (ArrayList)query.list();
         System.out.println("List of People we got: ");
         System.out.println(people);
+        
+        session.flush();
+        tx.commit();
+        session.close();
        
         return people;
         //Done
