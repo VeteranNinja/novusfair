@@ -150,7 +150,7 @@ public class Bean implements Serializable  {
         this.editPerson = editPerson;
     }
  
- private Person editPerson;
+ private Person editPerson = testPerson;
   
  public void submit() {
      /*logic.addPerson(firstName, lastName, homeAddress, contactNumber, email, degree, yearIn, 
@@ -160,6 +160,10 @@ public class Bean implements Serializable  {
     public String editPerson(int personId) {
         //selectedPerson = logic.getPerson(personId);
         return "/edit_page.xhtml";
+    }
+    
+    public String editBack() {
+        return "/admin_page.xhtml";
     }
     public void deletePerson(int personId) {
         //logic.deletePerson(personId);
