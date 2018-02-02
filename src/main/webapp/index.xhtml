@@ -3,76 +3,127 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
-        <title></title>
+
+        <link type="text/css" rel="stylesheet" href="resources/css/newcss.css"></link> 
+        <!--<h:outputStylesheet library="css" name="newcss.css"/>-->
+        <title> </title>
+
+        <!-- <style>
+           /*  .Bimage{
+      background-image:url("{resources['images/capita.jpg']}");
+             .Bimage{background-image:url("resources/images/capita.jpg");}*/
+             
+         </style>-->
+
     </h:head>
-    <h:body>
-
-           <h:form>
-            <h3> First Name </h3>
-            <h:inputText value = "#{bean.firstName}">  </h:inputText>
-
-            <h3> Last Name </h3>
-            <h:inputText value = "#{bean.lastName}">  </h:inputText>
-
-            <h3> Home address </h3>
-            <h:inputText value = "#{bean.homeAddress}">  </h:inputText>
-
-            <h3> Contact number </h3>
-            <h:inputText value = "#{bean.contactNumber}">  </h:inputText>
-
-            <h3> Email </h3>
-            <h:inputText value = "#{bean.email}">  </h:inputText>
-
-            <h3> Degree </h3>
-            <h:inputText value = "#{bean.degree}">  </h:inputText>
-
-            <h3> Degree Start Year  </h3>
-            <h:inputText value = "#{bean.yearIn}">  </h:inputText>
-
-            <h3> Degree Finish Year </h3>
-            <h:inputText value = "#{bean.yearOut}">  </h:inputText>
 
 
-            <h3> Classification </h3>
-            <h:inputText value = "#{bean.classification}">  </h:inputText>
 
-            <h3> Interest</h3>
-            <h:inputText value = "#{bean.interest}">  </h:inputText>
+    <h:body >
 
-            <h3> Availability for the assessment day </h3>
-            <h:inputText value = "#{bean.availability}">  </h:inputText>
+        <h:graphicImage value="resources/images/capita.jpg" width="100%" height="300px"  >  </h:graphicImage>
+        <center>
+            <h2>Interested in becoming a Novus graduate?   </h2></center>
+
+        <div class="container">
+
+            <h:form>
+                <center>
+
+                    <h3>Novus Graduate Scheme Sign up Form</h3></center>
+                <h3> Contact Details</h3>
+
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
+
+                    <h:outputLabel>First Name:</h:outputLabel>
+                    <h:inputText value = "#{bean.firstName}" p:type="Name" p:placeholder="Enter your First Name"> 
+                    </h:inputText>
+                    <h:outputLabel >Last Name:</h:outputLabel> 
+                    <h:inputText value = "#{bean.lastName}" p:type="Name" p:placeholder="Enter your Last Name">  
+                    </h:inputText>  
+                    <h:outputLabel for="color">Home Address:</h:outputLabel>
+                    <h:inputText value = "#{bean.homeAddress}" p:type="address" p:placeholder="Enter Home Address">  
+                    </h:inputText>
+                    <h:outputLabel> Contact number:</h:outputLabel>  
+                    <h:inputText value = "#{bean.contactNumber}" p:type="phone number" p:placeholder="Enter Phone number"> 
+                    </h:inputText>
+                    <h:outputLabel> Email:</h:outputLabel>   
+                    <h:inputText  value = "#{bean.email}" p:type="email" p:placeholder="Enter email">  
+                    </h:inputText>
+                </h:panelGrid>
+
+                <h3>Education Details</h3> 
+                <b></b>
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
+
+                    <h:outputLabel> Degree:</h:outputLabel>    
+                    <h:inputText value = "#{bean.degree}" p:type="degree" p:placeholder="Which degree ">  </h:inputText>
+                    <h:outputLabel> Degree Start Year:</h:outputLabel>   
+                    <h:inputText value = "#{bean.yearIn}" p:placeholder="Year">  </h:inputText>
+                    <h:outputLabel>Degree Finish Year: </h:outputLabel>    
+                    <h:inputText value = "#{bean.yearOut}" p:placeholder="Year">  </h:inputText>
+                    <h:outputLabel> Classification:  </h:outputLabel>    
+                    <h:inputText value = "#{bean.classification}" p:placeholder="Grade">  </h:inputText>
+
+                </h:panelGrid>
+
+                <h3>Interest and Availability</h3> 
+
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
 
 
-            <h3> Stream </h3>
-            <h:selectOneMenu value="#{bean.stream}">
-                <f:selectItem itemValue="changeAndTransform" itemLabel="Change and Transform" />
-                <f:selectItem itemValue="developmentAndImplementation" itemLabel="Development and Implementation" />
-                <f:selectItem itemValue="dataAndTesting" itemLabel="Data Testing"/>
-            </h:selectOneMenu>
-            
-            
-            <h3> Preferred Test Center Location </h3>
-            <h:selectOneMenu value="#{bean.location}">
-                <f:selectItem itemValue="manchester" itemLabel="Manchester" />
-                <f:selectItem itemValue="london" itemLabel="London" />
-                <f:selectItem itemValue="sheffield" itemLabel="Sheffield"/>
-            </h:selectOneMenu>
-            
-           
-      <br /><br /> 
-              
-           <h:commandButton value="Submit Form" action= "#{bean.submit}"/>
+                    <h:outputLabel>Interest: </h:outputLabel>    
+                    <h:inputText value = "#{bean.interest}"
+                                 p:placeholder="Write something.." style="height:200px" >  </h:inputText>
 
 
-        </h:form>
+
+                    <h:outputLabel> Stream: </h:outputLabel>    
+                    <h:selectOneMenu value="#{bean.stream}" p:placeholder="Select One">
+                        <f:selectItem itemValue="changeAndTransform" itemLabel="Change and Transform" />
+                        <f:selectItem itemValue="developmentAndImplementation" itemLabel="Development and Implementation" />
+                        <f:selectItem itemValue="dataAndTesting" itemLabel="Data Testing"/>
+                    </h:selectOneMenu>
+
+
+                    <h:outputLabel>Availability for the assessment day:</h:outputLabel>       
+                    <h:inputText value = "#{bean.availability}">  </h:inputText>
+
+                    <h:outputLabel> Preferred Test Centre Location:</h:outputLabel>       
+                    <h:selectOneMenu value="#{bean.location}">
+                        <f:selectItem itemValue="manchester" itemLabel="Manchester" />
+                        <f:selectItem itemValue="london" itemLabel="London" />
+                        <f:selectItem itemValue="sheffield" itemLabel="Sheffield"/>
+                    </h:selectOneMenu>
+
+                </h:panelGrid>
+
+                <h:commandButton class="submitbtn" value="Submit Form" action= "#{bean.submit}"/>
+
+            </h:form>
+
+        </div>
+
+        <b></b>
+        <b></b>
+        <b></b>
 
         <h:form>
-        <h2>Enter admin password</h2>
-         <h:inputSecret value = "#{bean.password}"/>
-         <h:commandButton value="submit" type="submit" action="#{bean.adminLogin}" />   
-         </h:form>
+            <h3>Enter admin password</h3>
+            <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight" >
+            <h:inputSecret value = "#{bean.password}"/>
+
+            <h:commandButton  styleClass="btn btn-primary" value="Login" type="submit" action="#{bean.adminLogin}" />   
+             </h:panelGrid>
+        </h:form>
+
+
+
+
+
+
     </h:body>
 </html>
-
