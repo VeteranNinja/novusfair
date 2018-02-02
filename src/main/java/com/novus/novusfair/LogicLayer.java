@@ -44,7 +44,13 @@ public class LogicLayer {
         
     }
     public ArrayList<Person> getPeople(){
-        return null;
+        //The 2 people below are for TESTING ONLY
+        Person person = new Person("John", "Snow", "9 Walker Road", "00000009001", "superjohnsnow@gmail.com", "Computer Science", 2012, 2015, "Making potato salads", "2018-02-22", "SoftwareDevelopment", "Manchester", 2018);
+        Person person2 = new Person("Ben", "Affleck", "2 Batman Avenue", "0764564655", "batman@gmail.com", "Computer Science", 2012, 2015, "Chewing gum", "2018-05-22", "SoftwareDevelopment", "Manchester", 2018);
+        ArrayList<Person> people = new ArrayList<Person>();
+        people.add(person);
+        people.add(person2);
+        return people;
         
     }
     public ArrayList<Person> getPeople(String columnName, String value){
