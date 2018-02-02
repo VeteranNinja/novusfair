@@ -13,6 +13,13 @@ and open the template in the editor.
     <h3> Search </h3>
     <h:inputText value = "">  </h:inputText>
     <h:commandButton value="Search" type="submit" />
+    <h:selectOneMenu value="#{bean.selectedLocation}" 
+                               valueChangeListener="#{bean.selectedLocationChanged}">
+                    <f:selectItems value="#{bean.locations}" />
+    </h:selectOneMenu>
+    
+    
+    
     <h:dataTable class="tftable" value="#{bean.people}" var="person" border="1">
                     <f:facet name="header">People</f:facet>
             
