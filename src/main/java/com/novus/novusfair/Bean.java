@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import static java.util.Collections.singletonList;
 import java.util.List;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -129,7 +130,9 @@ public class Bean implements Serializable  {
              yearOut, interest, availablity, stream, location, assesmentYear);
 
  }
- 
+    public void editPerson(int personId) {
+        
+    }
     public void deletePerson(int personId) {
         logic.deletePerson(personId);
     }
@@ -168,8 +171,8 @@ public class Bean implements Serializable  {
  private List<Person> people;
 
     public List<Person> getPeople() {
-        //return logic.getPeople();
-        return singletonList(testPerson);
+        return logic.getPeople();
+        //return singletonList(testPerson);
     }
 
     public String getClassification() {
