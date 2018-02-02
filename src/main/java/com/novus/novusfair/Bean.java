@@ -24,124 +24,6 @@ import javax.inject.Named;
 @Named("bean")
 public class Bean implements Serializable  {
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getHomeAddress() {
-        return homeAddress;
-    }
-
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDegree() {
-        return degree;
-    }
-
-    public void setDegree(String degree) {
-        this.degree = degree;
-    }
-
-    public int getYearIn() {
-        return yearIn;
-    }
-
-    public void setYearIn(int yearIn) {
-        this.yearIn = yearIn;
-    }
-
-    public int getYearOut() {
-        return yearOut;
-    }
-
-    public void setYearOut(int yearOut) {
-        this.yearOut = yearOut;
-    }
-
-    public String getInterest() {
-        return interest;
-    }
-
-    public void setInterest(String interest) {
-        this.interest = interest;
-    }
-
-    public String getAvailability() {
-        return availablity;
-    }
-
-    public void setAvailability(String Availablity) {
-        this.availablity = Availablity;
-    }
-
-    public int getAssesmentYear() {
-        return assesmentYear;
-    }
-
-    //private LogicLayer logic = new LogicLayer();
-    public void setAssesmentYear(int assesmentYear) {
-        this.assesmentYear = assesmentYear;
-    }
-    
-    public List<String> getLocations() {
-        return null;
-    }
-    
-    public void selectedLocationChanged() {
-        
-    }
-    
-    
-    private String selectedLocation;
-    
-    public String getSelectedLocation(){
-        return selectedLocation;
-    }
-    
-    
-    
- private String firstName;
- private String lastName;
- private String homeAddress;
- private String contactNumber;
- private String email;
- private String degree;
- 
- private int yearIn;
- private int yearOut;
- private String interest;
- private String availablity;
-
     public Person getEditPerson() {
         return editPerson;
     }
@@ -171,42 +53,12 @@ public class Bean implements Serializable  {
     }
     
     public String editBack() {
+        LogicLayer.editPerson(editPerson);
         return "/admin_page.xhtml";
     }
     public void deletePerson(int personId) {
         LogicLayer.deletePerson(personId);
     }
-    public void setAvailablity(String availablity) {
-        this.availablity = availablity;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
- private String stream;
- private String location;
-
-    public String getAvailablity() {
-        return availablity;
-    }
-
-    public String getStream() {
-        return stream;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setStream(String selectedStream) {
-        this.stream = selectedStream;
-    }
-
-    public void setSelectedLocation(String selectedLocation) {
-        this.location = selectedLocation;
-    }
- private int assesmentYear;
- private String classification;
  
  private List<Person> people;
 
@@ -214,15 +66,6 @@ public class Bean implements Serializable  {
         return LogicLayer.getPeople();
         //return singletonList(testPerson);
     }
-
-    public String getClassification() {
-        return classification;
-    }
-
-    public void setClassification(String classification) {
-        this.classification = classification;
-    }
-
 
     public String getPassword() {
         return password;
