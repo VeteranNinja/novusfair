@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.Serializable;
 import static java.util.Collections.singletonList;
 import java.util.List;
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -20,8 +22,9 @@ import javax.inject.Named;
  *
  * @author colinbrophy
  */
-@ViewScoped
-@Named("bean")
+@ApplicationScoped
+//@Named("bean")
+@ManagedBean(name="bean", eager=true)
 public class Bean implements Serializable  {
 
     public Person getEditPerson() {
