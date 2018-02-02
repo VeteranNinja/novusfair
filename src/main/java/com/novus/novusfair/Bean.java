@@ -108,7 +108,7 @@ public class Bean implements Serializable  {
         return assesmentYear;
     }
 
-    private LogicLayer logic = new LogicLayer();
+    //private LogicLayer logic = new LogicLayer();
     public void setAssesmentYear(int assesmentYear) {
         this.assesmentYear = assesmentYear;
     }
@@ -150,15 +150,23 @@ public class Bean implements Serializable  {
         this.editPerson = editPerson;
     }
  
- private Person editPerson = testPerson;
+ private Person submitPerson = new Person();
+
+    public Person getSubmitPerson() {
+        return submitPerson;
+    }
+
+    public void setSubmitPerson(Person submitPerson) {
+        this.submitPerson = submitPerson;
+    }
+ private Person editPerson;
   
  public void submit() {
-     /*logic.addPerson(firstName, lastName, homeAddress, contactNumber, email, degree, yearIn, 
-             yearOut, interest, availablity, stream, location, assesmentYear);*/
+     LogicLayer.addPerson(submitPerson);
 
  }
     public String editPerson(int personId) {
-        //selectedPerson = logic.getPerson(personId);
+        editPerson = LogicLayer.getPersonById(personId);
         return "/edit_page.xhtml";
     }
     
@@ -166,7 +174,7 @@ public class Bean implements Serializable  {
         return "/admin_page.xhtml";
     }
     public void deletePerson(int personId) {
-        //logic.deletePerson(personId);
+        LogicLayer.deletePerson(personId);
     }
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
@@ -203,8 +211,8 @@ public class Bean implements Serializable  {
  private List<Person> people;
 
     public List<Person> getPeople() {
-        //return logic.getPeople();
-        return singletonList(testPerson);
+        return LogicLayer.getPeople();
+        //return singletonList(testPerson);
     }
 
     public String getClassification() {
@@ -214,8 +222,7 @@ public class Bean implements Serializable  {
     public void setClassification(String classification) {
         this.classification = classification;
     }
- 
- 
+
 
     public String getPassword() {
         return password;

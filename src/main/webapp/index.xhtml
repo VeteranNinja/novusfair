@@ -39,19 +39,19 @@
                 <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
 
                     <h:outputLabel>First Name:</h:outputLabel>
-                    <h:inputText value = "#{bean.firstName}" p:type="Name" p:placeholder="Enter your First Name"> 
+                    <h:inputText value = "#{bean.submitPerson.firstName}" p:type="Name" p:placeholder="Enter your First Name"> 
                     </h:inputText>
                     <h:outputLabel >Last Name:</h:outputLabel> 
-                    <h:inputText value = "#{bean.lastName}" p:type="Name" p:placeholder="Enter your Last Name">  
+                    <h:inputText value = "#{bean.submitPerson.surname}" p:type="Name" p:placeholder="Enter your Last Name">  
                     </h:inputText>  
                     <h:outputLabel for="color">Home Address:</h:outputLabel>
-                    <h:inputText value = "#{bean.homeAddress}" p:type="address" p:placeholder="Enter Home Address">  
+                    <h:inputText value = "#{bean.submitPerson.homeAddress}" p:type="address" p:placeholder="Enter Home Address">  
                     </h:inputText>
                     <h:outputLabel> Contact number:</h:outputLabel>  
-                    <h:inputText value = "#{bean.contactNumber}" p:type="phone number" p:placeholder="Enter Phone number"> 
+                    <h:inputText value = "#{bean.submitPerson.contactNumber}" p:type="phone number" p:placeholder="Enter Phone number"> 
                     </h:inputText>
                     <h:outputLabel> Email:</h:outputLabel>   
-                    <h:inputText  value = "#{bean.email}" p:type="email" p:placeholder="Enter email">  
+                    <h:inputText  value = "#{bean.submitPerson.email}" p:type="email" p:placeholder="Enter email">  
                     </h:inputText>
                 </h:panelGrid>
 
@@ -60,14 +60,12 @@
                 <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
 
                     <h:outputLabel> Degree:</h:outputLabel>    
-                    <h:inputText value = "#{bean.degree}" p:type="degree" p:placeholder="Which degree ">  </h:inputText>
+                    <h:inputText value = "#{bean.submitPerson.degree}" p:type="degree" p:placeholder="Which degree ">  </h:inputText>
                     <h:outputLabel> Degree Start Year:</h:outputLabel>   
-                    <h:inputText value = "#{bean.yearIn}" p:placeholder="Year">  </h:inputText>
+                    <h:inputText value = "#{bean.submitPerson.yearIn}" p:placeholder="Year">  </h:inputText>
                     <h:outputLabel>Degree Finish Year: </h:outputLabel>    
-                    <h:inputText value = "#{bean.yearOut}" p:placeholder="Year">  </h:inputText>
-                    <h:outputLabel> Classification:  </h:outputLabel>    
-                    <h:inputText value = "#{bean.classification}" p:placeholder="Grade">  </h:inputText>
-
+                    <h:inputText value = "#{bean.submitPerson.yearOut}" p:placeholder="Year">  </h:inputText>
+                    
                 </h:panelGrid>
 
                 <h3>Interest and Availability</h3> 
@@ -76,13 +74,13 @@
 
 
                     <h:outputLabel>Interest: </h:outputLabel>    
-                    <h:inputText value = "#{bean.interest}"
+                    <h:inputText value = "#{bean.submitPerson.interest}"
                                  p:placeholder="Write something.." style="height:200px" >  </h:inputText>
 
 
 
                     <h:outputLabel> Stream: </h:outputLabel>    
-                    <h:selectOneMenu value="#{bean.stream}" p:placeholder="Select One">
+                    <h:selectOneMenu value="#{bean.submitPerson.selectedStream}" p:placeholder="Select One">
                         <f:selectItem itemValue="changeAndTransform" itemLabel="Change and Transform" />
                         <f:selectItem itemValue="developmentAndImplementation" itemLabel="Development and Implementation" />
                         <f:selectItem itemValue="dataAndTesting" itemLabel="Data Testing"/>
@@ -90,10 +88,10 @@
 
 
                     <h:outputLabel>Availability for the assessment day:</h:outputLabel>       
-                    <h:inputText value = "#{bean.availability}">  </h:inputText>
+                    <h:inputText value = "#{bean.submitPerson.availability}">  </h:inputText>
 
                     <h:outputLabel> Preferred Test Centre Location:</h:outputLabel>       
-                    <h:selectOneMenu value="#{bean.location}">
+                    <h:selectOneMenu value="#{bean.submitPerson.selectedLocation}">
                         <f:selectItem itemValue="manchester" itemLabel="Manchester" />
                         <f:selectItem itemValue="london" itemLabel="London" />
                         <f:selectItem itemValue="sheffield" itemLabel="Sheffield"/>
