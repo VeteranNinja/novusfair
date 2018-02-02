@@ -74,6 +74,17 @@ button:hover {
 }
 
 
+.printbtn {
+  color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  cursor: pointer; 
+  float:right;
+  background-color: #33cccc;
+  width: 100px;
+}
+
 
 
 .loginbtn {

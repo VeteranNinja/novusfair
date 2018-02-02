@@ -19,14 +19,20 @@ and open the template in the editor.
     </h:head>
 
     <h:body class="body" >
-        <h3> Welcome to the Admin Page </h3>
+       <center>  <h3> Welcome to the Admin Page </h3></center>
 
 
         <h:form class="container3">
             <center> <h3>Filter Student</h3></center>
 
-
-            <div class="row">
+ <h:panelGrid columns="4" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight"   >
+                <h:inputText value = "" >  </h:inputText>
+                <h:commandButton value="Search" type="submit" />
+                 <h:commandButton value="Get all current year" type="submit" />
+                 <h:commandButton class="printbtn" value="Print" type="submit" />
+            </h:panelGrid>
+            
+             <!--<div class="row">
                 <div class="column1" style="background-color:#aaa;">
                     <h:inputText value = "" >  </h:inputText></div>
                 
@@ -37,16 +43,16 @@ and open the template in the editor.
                      <h:commandButton value="Get all current year" type="submit" />
                    </div>
 
-                <!--<div class="column4" style="background-color:#bbb;">  <h:outputLabel >Location:</h:outputLabel>  
+               <div class="column4" style="background-color:#bbb;">  <h:outputLabel >Location:</h:outputLabel>  
                     <h:selectOneMenu value="#{bean.selectedLocation}" 
                                      valueChangeListener="#{bean.selectedLocationChanged}">
                         <f:selectItems value="#{bean.locations}" />
                     </h:selectOneMenu>
-                   </div>-->
+                   </div>
                 
             </div>   
          <div class="submitbtn" style="background-color:#aaa;">
-                   <h:commandButton value="Print" type="submit" /></div>    
+                   <h:commandButton value="Print" type="submit" /></div>    -->
                
              
         </h:form >
@@ -121,3 +127,7 @@ and open the template in the editor.
               </h:form >
     </h:body>
 </html>
+
+
+
+  
