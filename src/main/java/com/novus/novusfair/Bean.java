@@ -113,6 +113,23 @@ public class Bean implements Serializable  {
         this.assesmentYear = assesmentYear;
     }
     
+    public List<String> getLocations() {
+        return null;
+    }
+    
+    public void selectedLocationChanged() {
+        
+    }
+    
+    
+    private String selectedLocation;
+    
+    public String getSelectedLocation(){
+        return selectedLocation;
+    }
+    
+    
+    
  private String firstName;
  private String lastName;
  private String homeAddress;
