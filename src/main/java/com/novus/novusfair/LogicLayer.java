@@ -107,8 +107,7 @@ public class LogicLayer {
         //Done
     }
     public static void editPerson(Person updatedPerson){
-        //Person updatedPerson = new Person(id, firstName, surname, homeAddress, contactNumber, email, degree, yearIn, yearOut, interest, availability, selectedStream, selectedLocation, assessmentYear);
-        
+        System.out.println("Edit person ---------------------");
         Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Person.class);
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
@@ -123,15 +122,13 @@ public class LogicLayer {
     public static Person getPersonById(int id){
         System.out.println("Get person by id start");
         Person person;         
-        try{Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Person.class);
+        Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Person.class);
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         person = (Person)session.get(Person.class, id);
-        }
-        catch(Exception e){
-            return null;
-        }
+        
+        
         
         return person;
         
