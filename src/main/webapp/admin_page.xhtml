@@ -32,27 +32,7 @@ and open the template in the editor.
                  <h:commandButton class="printbtnbtbtn" value="Print" type="submit" />
             </h:panelGrid>
             
-             <<div class="row">
-                <div class="column1" style="background-color:#aaa;">
-                    <h:inputText value = "" >  </h:inputText></div>
-                
-                <div class="column2" style="background-color:#bbb;">
-                    <h:commandButton value="Search" type="submit" /></div>
-
-                <div class="column3" style="background-color:#bbb;">
-                     <h:commandButton value="Get all current year" type="submit" />
-                   </div>
-
-               <div class="column4" style="background-color:#bbb;">  <h:outputLabel >Location:</h:outputLabel>  
-                    <h:selectOneMenu value="#{bean.selectedLocation}" 
-                                     valueChangeListener="#{bean.selectedLocationChanged}">
-                        <f:selectItems value="#{bean.locations}" />
-                    </h:selectOneMenu>
-                   </div>
-                
-            </div>   
-         <div class="submitbtn" style="background-color:#aaa;">
-                   <h:commandButton value="Print" type="submit" /></div>    
+               
                
              
         </h:form >
