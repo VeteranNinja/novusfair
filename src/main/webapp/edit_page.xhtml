@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <link type="text/css" rel="stylesheet" href="resources/css/newcss.css"></link> 
+        <!--<h:outputStylesheet library="css" name="newcss.css"/>-->
+        <title> </title>
+
+        <!-- <style>
+           /*  .Bimage{
+      background-image:url("{resources['images/capita.jpg']}");
+             .Bimage{background-image:url("resources/images/capita.jpg");}*/
+             
+         </style>-->
+
+    </h:head>
+
+
+
+    <h:body class="body" >
+
+        <center>
+            <h2>Interested in becoming a Novus graduate?   </h2></center>
+
+        <div class="container">
+
+            <h:form>
+
+                <h3> Contact Details</h3>
+
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
+
+                    <h:outputLabel>First Name:</h:outputLabel>
+                    <h:inputText value = "#{bean.editPerson.firstName}" p:type="Name" p:placeholder="Enter your First Name"> 
+                    </h:inputText>
+                    <h:outputLabel >Last Name:</h:outputLabel> 
+                    <h:inputText value = "#{bean.editPerson.surname}" p:type="Name" p:placeholder="Enter your Last Name">  
+                    </h:inputText>  
+                    <h:outputLabel for="color">Home Address:</h:outputLabel>
+                    <h:inputText value = "#{bean.editPerson.homeAddress}" p:type="address" p:placeholder="Enter Home Address">  
+                    </h:inputText>
+                    <h:outputLabel> Contact number:</h:outputLabel>  
+                    <h:inputText value = "#{bean.editPerson.contactNumber}" p:type="phone number" p:placeholder="Enter Phone number"> 
+                    </h:inputText>
+                    <h:outputLabel> Email:</h:outputLabel>   
+                    <h:inputText  value = "#{bean.editPerson.email}" p:type="email" p:placeholder="Enter email">  
+                    </h:inputText>
+                </h:panelGrid>
+
+                <h3>Education Details</h3> 
+                <b></b>
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
+
+                    <h:outputLabel> Degree:</h:outputLabel>    
+                    <h:inputText value = "#{bean.editPerson.degree}" p:type="degree" p:placeholder="Which degree ">  </h:inputText>
+                    <h:outputLabel> Degree Start Year:</h:outputLabel>   
+                    <h:inputText value = "#{bean.editPerson.yearIn}" p:placeholder="Year">  </h:inputText>
+                    <h:outputLabel>Degree Finish Year: </h:outputLabel>    
+                    <h:inputText value = "#{bean.editPerson.yearOut}" p:placeholder="Year">  </h:inputText>
+                <!--    <h:outputLabel> Classification:  </h:outputLabel>    
+                    <h:inputText value = "#{edtitbean.classification}" p:placeholder="Grade">  </h:inputText>
+-->
+                </h:panelGrid>
+
+                <h3>Interest and Availability</h3> 
+
+                <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight,colLeft,colRight" >
+
+
+                    <h:outputLabel>Interest: </h:outputLabel>    
+                    <h:inputText value = "#{bean.editPerson.interest}"
+                                 p:placeholder="Write something.." style="height:200px" >  </h:inputText>
+
+
+
+                    <h:outputLabel> Stream: </h:outputLabel>    
+                    <h:selectOneMenu value="#{bean.editPerson.selectedStream}" p:placeholder="Select One">
+                        <f:selectItem itemValue="changeAndTransform" itemLabel="Change and Transform" />
+                        <f:selectItem itemValue="developmentAndImplementation" itemLabel="Development and Implementation" />
+                        <f:selectItem itemValue="dataAndTesting" itemLabel="Data Testing"/>
+                    </h:selectOneMenu>
+
+
+                    <h:outputLabel>Availability for the assessment day:</h:outputLabel>       
+                    <h:inputText value = "#{bean.editPerson.availability}">  </h:inputText>
+
+                    <h:outputLabel> Preferred Test Centre Location:</h:outputLabel>       
+                    <h:selectOneMenu value="#{bean.editPerson.selectedLocation}">
+                        <f:selectItem itemValue="manchester" itemLabel="Manchester" />
+                        <f:selectItem itemValue="london" itemLabel="London" />
+                        <f:selectItem itemValue="sheffield" itemLabel="Sheffield"/>
+                    </h:selectOneMenu>
+
+                </h:panelGrid>
+
+                <!--
+                <h:commandButton class="submitbtn" value="Submit Form" action= "#{bean.editBack}"/>
+                -->
+            </h:form>
+
+        </div>
+
+
+
+
+
+    </h:body>
+</html>

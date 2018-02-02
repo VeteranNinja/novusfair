@@ -141,17 +141,28 @@ public class Bean implements Serializable  {
  private int yearOut;
  private String interest;
  private String availablity;
+
+    public Person getEditPerson() {
+        return editPerson;
+    }
+
+    public void setEditPerson(Person editPerson) {
+        this.editPerson = editPerson;
+    }
+ 
+ private Person editPerson;
   
  public void submit() {
-     logic.addPerson(firstName, lastName, homeAddress, contactNumber, email, degree, yearIn, 
-             yearOut, interest, availablity, stream, location, assesmentYear);
+     /*logic.addPerson(firstName, lastName, homeAddress, contactNumber, email, degree, yearIn, 
+             yearOut, interest, availablity, stream, location, assesmentYear);*/
 
  }
-    public void editPerson(int personId) {
-        
+    public String editPerson(int personId) {
+        //selectedPerson = logic.getPerson(personId);
+        return "/edit_page.xhtml";
     }
     public void deletePerson(int personId) {
-        logic.deletePerson(personId);
+        //logic.deletePerson(personId);
     }
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
@@ -188,8 +199,8 @@ public class Bean implements Serializable  {
  private List<Person> people;
 
     public List<Person> getPeople() {
-        return logic.getPeople();
-        //return singletonList(testPerson);
+        //return logic.getPeople();
+        return singletonList(testPerson);
     }
 
     public String getClassification() {
@@ -214,11 +225,11 @@ public class Bean implements Serializable  {
  
  private static final String ADMIN_PASSWORD = "rob";
  
- public void adminLogin() throws IOException {
+ public String adminLogin() throws IOException {
     if(password.equals(ADMIN_PASSWORD))
-        FacesContext.getCurrentInstance().getExternalContext().dispatch("/admin_page.xhtml");
+        return "/admin_page.xhtml";
     else 
-        FacesContext.getCurrentInstance().getExternalContext().dispatch("/login_failed.xhtml");
+       return "/login_failed.xhtml";
 }
  private static final Person testPerson = new Person("Joe", "Bloggs", "nowhere" , "4", "ffs@2.com", 
          "Degree", 344, 434, "", "any" ,"soon", "duno", 2018);
