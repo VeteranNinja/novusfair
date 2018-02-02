@@ -22,7 +22,7 @@
 
 
 
-    <h:body >
+    <h:body class="body" >
 
         <h:graphicImage value="resources/images/capita.jpg" width="100%" height="300px"  >  </h:graphicImage>
         <center>
@@ -110,16 +110,19 @@
         <b></b>
         <b></b>
         <b></b>
-
+        <div class="container2">
         <h:form>
-            <h3>Enter admin password</h3>
+            <div class="div_center">
+            <h3>For Admin Login</h3>
+            
             <h:panelGrid columns="2" cellpadding = "5" cellspacing = "1" columnClasses ="colLeft,colRight" >
-            <h:inputSecret value = "#{bean.password}"/>
+            <h:inputSecret value = "#{bean.password}" p:placeholder="Enter Admin Password"/>
 
-            <h:commandButton  styleClass="btn btn-primary" value="Login" type="submit" action="#{bean.adminLogin}" />   
+            <h:commandButton  styleClass="loginbtn" value="Login" type="submit" action="#{bean.adminLogin}" />   
              </h:panelGrid>
+                </div>
         </h:form>
-
+        </div>
 
 
 

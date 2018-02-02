@@ -73,11 +73,28 @@ button:hover {
   width: 20%
 }
 
-.center-div
+
+.loginbtn {
+  color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  cursor: pointer; 
+  float:left;
+  background-color: #4CAF50;
+  width: 20%
+}
+
+.body
 
 {
-     margin: 0 auto;
-     width: 200px; 
+    margin-top: 30px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 100px;
+        
+    
+     
 }
 
 
@@ -93,6 +110,23 @@ button:hover {
     background-color: #5DADE2;
     padding: 100px;
     margin: 50px;
+}
+
+.container2{
+    border-radius: 5px;
+    background-color: #CACFD2;
+    padding: 20px;
+    margin: 50px;
+    padding: 50px;
+    
+}
+
+
+.div_center{
+    
+    margin: auto;
+    width: 80%
+        
 }
 /* Clear floats after the columns */
 .row:after {
