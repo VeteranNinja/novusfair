@@ -45,10 +45,13 @@ public class Bean implements Serializable  {
   
  public void submit() {
      LogicLayer.addPerson(submitPerson);
+     submitPerson = new Person();
 
  }
     public String editPerson(int personId) {
         editPerson = LogicLayer.getPersonById(personId);
+        
+        System.out.println(personId);
         return "/edit_page.xhtml";
     }
     

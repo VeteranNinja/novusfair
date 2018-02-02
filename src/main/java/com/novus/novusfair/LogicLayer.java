@@ -121,7 +121,7 @@ public class LogicLayer {
         //Done
     }
     public static Person getPersonById(int id){
-        
+        System.out.println("Get person by id start");
         Person person;         
         try{Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Person.class);
         SessionFactory sf = con.buildSessionFactory();
