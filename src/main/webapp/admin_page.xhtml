@@ -10,82 +10,114 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:jsf="http://xmlns.jcp.org/jsf">
-    <h3> Search </h3>
-    <h:inputText value = "">  </h:inputText>
-    <h:commandButton value="Search" type="submit" />
-    <h:selectOneMenu value="#{bean.selectedLocation}" 
-                               valueChangeListener="#{bean.selectedLocationChanged}">
-                    <f:selectItems value="#{bean.locations}" />
-    </h:selectOneMenu>
-   <h:commandButton value="Get all current year" type="submit" />
-   <h:commandButton value="Print" type="submit" />
+
+    <h:head>
+
+        <link type="text/css" rel="stylesheet" href="resources/css/newcss.css"></link> 
+        <title> </title>
+
+    </h:head>
+
+    <h:body class="body" >
+        <h3> Welcome to the Admin Page </h3>
 
 
-    
-    
-    <h:dataTable class="tftable" value="#{bean.people}" var="person" border="1">
-                    <f:facet name="header">People</f:facet>
-            
-            <h:column>
-              <f:facet name="header">ID</f:facet>
-              #{person.id}
-            </h:column>            
-            <h:column>
-              <f:facet name="header">First Name</f:facet>
-              #{person.firstName}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Last Name</f:facet>
-              #{person.surname}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Address</f:facet>
-              #{person.homeAddress}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Phone Number</f:facet>
-              #{person.contactNumber}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Email</f:facet>
-              #{person.email}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Degree</f:facet>
-              #{person.degree}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Year In</f:facet>
-              #{person.yearIn}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Year Out</f:facet>
-              #{person.yearOut}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Interests</f:facet>
-              #{person.interest}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Assesment Date</f:facet>
-              #{person.firstName}
-            </h:column>
-            <h:column>
-              <f:facet name="header">Stream</f:facet>
-              #{person.selectedStream}
-            </h:column>            #
-            <h:column>
-              <f:facet name="header">Location of Test Centre</f:facet>
-              #{person.selectedLocation}
-            </h:column>           
-            <h:column>
-              <f:facet name="header">Assesment Year</f:facet>
-              #{person.assessmentYear}
-            </h:column>
-            
-            <h:column><h:commandButton value="Delete" type="submit" action="#{bean.deletePerson(person.id)}" /></h:column>
-            <h:column><h:commandButton value="Edit" type="submit" action="#{bean.editPerson(person.id)}" /></h:column>
-            
-    </h:dataTable>
-    
+        <h:form class="container3">
+            <center> <h3>Filter Student</h3></center>
+
+
+            <div class="row">
+                <div class="column1" style="background-color:#aaa;">
+                    <h:inputText value = "" >  </h:inputText></div>
+                
+                <div class="column2" style="background-color:#bbb;">
+                    <h:commandButton value="Search" type="submit" /></div>
+
+                <div class="column3" style="background-color:#bbb;">
+                     <h:commandButton value="Get all current year" type="submit" />
+                   </div>
+
+                <div class="column4" style="background-color:#bbb;">  <h:outputLabel >Location:</h:outputLabel>  
+                    <h:selectOneMenu value="#{bean.selectedLocation}" 
+                                     valueChangeListener="#{bean.selectedLocationChanged}">
+                        <f:selectItems value="#{bean.locations}" />
+                    </h:selectOneMenu>
+                   </div>
+                
+            </div>   
+         <div class="submitbtn" style="background-color:#aaa;">
+                   <h:commandButton value="Print" type="submit" /></div>    
+               
+             
+        </h:form >
+        <h:form class="containe4">
+
+        <div style="overflow-x:scroll;">
+            <h:dataTable class="tftable" value="#{bean.people}" var="person" border="1">
+                <f:facet name="header">People</f:facet>
+
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{person.id}
+                </h:column>            
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                        #{person.firstName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                        #{person.surname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Address</f:facet>
+                        #{person.homeAddress}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Phone Number</f:facet>
+                        #{person.contactNumber}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{person.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Degree</f:facet>
+                        #{person.degree}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Year In</f:facet>
+                        #{person.yearIn}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Year Out</f:facet>
+                        #{person.yearOut}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Interests</f:facet>
+                        #{person.interest}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Assesment Date</f:facet>
+                        #{person.firstName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Stream</f:facet>
+                        #{person.selectedStream}
+                </h:column>            #
+                <h:column>
+                    <f:facet name="header">Location of Test Centre</f:facet>
+                        #{person.selectedLocation}
+                </h:column>           
+                <h:column>
+                    <f:facet name="header">Assesment Year</f:facet>
+                        #{person.assessmentYear}
+                </h:column>
+
+                <h:column><h:commandButton value="Delete" type="submit" action="#{bean.deletePerson(person.id)}" /></h:column>
+                <h:column><h:commandButton value="Edit" type="submit" action="#{bean.editPerson(person.id)}" /></h:column>
+
+            </h:dataTable>
+        </div>
+              </h:form >
+    </h:body>
 </html>

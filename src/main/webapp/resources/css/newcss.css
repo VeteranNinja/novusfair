@@ -74,6 +74,8 @@ button:hover {
 }
 
 
+
+
 .loginbtn {
   color: white;
     padding: 14px 20px;
@@ -92,8 +94,7 @@ button:hover {
         margin-left: 100px;
         margin-right: 100px;
         margin-bottom: 100px;
-        
-    
+            
      
 }
 
@@ -121,12 +122,37 @@ button:hover {
     
 }
 
+.container3 {
+    border-radius: 5px;
+    background-color: #5DADE2;
+    padding: 15px;
+    margin: 50px;
+}
+
+.container4 {
+    border-radius: 5px;
+    background-color: #5DADE2;
+    padding: 15px;
+    margin: 50px;
+}
+
 
 .div_center{
     
     margin: auto;
     width: 80%
         
+}
+
+
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -147,3 +173,32 @@ button:hover {
 
    
  }
+
+ 
+ .column1 {
+    float: left;
+    padding: 10px;
+    width: 20%;
+}
+
+.column2 {
+    float: left;
+    padding: 10px;
+    width: 10%;
+}
+
+
+.column3 {
+    float: left;
+    padding: 10px;
+    width: 30%;
+    margin: 20px;
+   
+}
+
+.column4 {
+    float: left;
+    padding: 10px;
+    width: 30%;
+   
+}
